@@ -1,18 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="14198fec-fc0a-4fe8-a758-1d8126dd460e" name="Changes" comment="" />
+    <list default="true" id="14198fec-fc0a-4fe8-a758-1d8126dd460e" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/DSLGen.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/csv_processor.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/csv_processor_EQ.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main_menu.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sql_generator.ini" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sql_generator.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/summator.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/traceid_processor.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 0
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
   <component name="ProjectId" id="31m0M46jWJjLsFrbbpjbFOZtTv5" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -21,8 +44,15 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Python.csv_processor.executor": "Run",
+    "Python.main_menu.executor": "Run",
+    "Python.sql_generator.executor": "Run",
+    "Python.summator.executor": "Run",
+    "Python.traceid_processor.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master"
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "E:/Programming/My/Python Projects/logParser"
   }
 }]]></component>
   <component name="SharedIndexes">
