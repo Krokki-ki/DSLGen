@@ -1,0 +1,101 @@
+Byte-compiled / optimized / DLL files
+pycache/
+*.py[cod]
+*$py.class
+
+C extensions
+*.so
+
+Virtual environments
+.venv/
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+Environment files
+.env
+.envrc
+
+Distribution / packaging (PyInstaller, wheels, sdist)
+build/
+dist/
+*.spec
+*.egg
+*.egg-info/
+.eggs/
+wheels/
+sdist/
+downloads/
+develop-eggs/
+share/python-wheels/
+lib/
+lib64/
+parts/
+var/
+MANIFEST
+
+Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+Unit test / coverage reports
+.tox/
+.nox/
+.pytest_cache/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py.cover
+.hypothesis/
+cover/
+htmlcov/
+
+Jupyter / IPython
+.ipynb_checkpoints
+profile_default/
+ipython_config.py
+
+Type checkers
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.pyre/
+.pytype/
+.ruff_cache/
+
+Documentation
+docs/_build/
+site/
+.pybuilder/
+target/
+
+Editors / IDE
+.idea/
+.vscode/
+*.iml
+.spyderproject
+.spyproject
+.ropeproject
+
+OS-specific
+.DS_Store
+Thumbs.db
+
+Message brokers / caches (опционально, если встречаются)
+*.rdb
+*.aof
+*.pid
+mnesia/
+rabbitmq/
+rabbitmq-data/
+activemq-data/
+
+Project-specific extras
+Исключаем артефакты, создаваемые приложением во время работы
+output/
+*.log
