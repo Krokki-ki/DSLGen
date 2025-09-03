@@ -6,7 +6,7 @@ import importlib
 from typing import Callable, Dict
 
 WELCOME = (
-    "Приветствую Вас в программе для обработки файлов Kibana! (v1.2)\n"
+    "Приветствую Вас в программе для обработки файлов Kibana! (v1.3)\n"
     "\n Перед началом работы просьба ознакомиться с Workflow программы:\n"
     '\n* "Шаг 1" - принимает единый файл с traceID, формирует файлы-группы по 3500 объектов и формирует DSL конструкции для каждой отдельной группы;'
     '\n* "Шаг 2" - принимает несколько файлов CSV, вычленяет только данные по заданному Вами объекту (например plasticID), формирует список указанных объектов, удаляет дубли объектов, сохраняет в виде единого файла txt;'
@@ -27,11 +27,12 @@ def run_traceid_processor() -> None:
         print("Ошибка: в модуле traceid_processor не найдена функция main().")
 
 def run_exel_processor() -> None:
-    mod = importlib.import_module("exel_processor")
+    # Вариант A: шаг 2 запускает csv_processor
+    mod = importlib.import_module("csv_processor")
     if hasattr(mod, "main") and callable(mod.main):
         mod.main()
     else:
-        print("Ошибка: в модуле exel_processor не найдена функция main().")
+        print("Ошибка: в модуле csv_processor не найдена функция main().")
 
 def run_sql_generator() -> None:
     mod = importlib.import_module("sql_generator")
@@ -70,10 +71,10 @@ def main() -> None:
     actions: Dict[str, Callable[[], None]] = {
         "0": exit_program,
         "1": run_traceid_processor,
-        "2": run_exel_processor,
+        "2": run_exel_processor,   # ТЕПЕРЬ ИМПОРТ csv_processor
         "3": run_sql_generator,
-        "4": run_exel_processor_EQ,  # новый шаг 4
-        "5": run_summator,           # summator перенесён на шаг 5
+        "4": run_exel_processor_EQ,
+        "5": run_summator,
     }
     while True:
         choice = read_choice()
