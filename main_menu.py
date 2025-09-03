@@ -11,8 +11,8 @@ WELCOME = (
     '\n* "Шаг 1" - принимает единый файл с traceID, формирует файлы-группы по 3500 объектов и формирует DSL конструкции для каждой отдельной группы;'
     '\n* "Шаг 2" - принимает несколько файлов CSV, вычленяет только данные по заданному Вами объекту (например plasticID), формирует список указанных объектов, удаляет дубли объектов, сохраняет в виде единого файла txt;'
     '\n* "Шаг 3" - Принимает txt файл (из шага 2), запрашивает имя таблицы БД, запрашивает конкретное поле для фильтрации с предикатом IN, формирует файлы-группы для SQL-запросов с учётом ограничения в 10000 символов каждый, формирует в каждом файле-группе SQL-запрос, передавая набор указанных значений.'
-    '\n* "Шаг 4" - Принимает файлы CSV из EQ и соединяет в один файл EXEL для последующего склеивания таблиц.'
-    '\n* "Шаг 5" - Принимает два txt файла (файл с клиентскими данными CUS, cardId, Account - из шага 2 и файл, полученный в результате выгрузки из БД EQ), затем склеивает две таблицы посредством общего ключа и выгружает готовый общий файл.'
+    '\n* "Шаг 4" - Принимает файлы EXEL из EQ и соединяет в один файл EXEL для последующего склеивания таблиц.'
+    '\n* "Шаг 5" - Принимает два EXEL файла (файл с клиентскими данными CUS, cardId, Account - из шага 2 и файл, полученный в результате объединения выгрузок из БД EQ), затем склеивает две таблицы посредством общего ключа и выгружает готовый общий файл.'
     '\n'
     '\n Все шаги рекомендуется выполнять последовательно\n'
 )
@@ -26,12 +26,12 @@ def run_traceid_processor() -> None:
     else:
         print("Ошибка: в модуле traceid_processor не найдена функция main().")
 
-def run_csv_processor() -> None:
-    mod = importlib.import_module("csv_processor")
+def run_exel_processor() -> None:
+    mod = importlib.import_module("exel_processor")
     if hasattr(mod, "main") and callable(mod.main):
         mod.main()
     else:
-        print("Ошибка: в модуле csv_processor не найдена функция main().")
+        print("Ошибка: в модуле exel_processor не найдена функция main().")
 
 def run_sql_generator() -> None:
     mod = importlib.import_module("sql_generator")
@@ -40,12 +40,12 @@ def run_sql_generator() -> None:
     else:
         print("Ошибка: в модуле sql_generator не найдена функция main().")
 
-def run_csv_processor_EQ() -> None:
-    mod = importlib.import_module("csv_processor_EQ")
+def run_exel_processor_EQ() -> None:
+    mod = importlib.import_module("exel_processor_EQ")
     if hasattr(mod, "main") and callable(mod.main):
         mod.main()
     else:
-        print("Ошибка: в модуле csv_processor_EQ не найдена функция main().")
+        print("Ошибка: в модуле exel_processor_EQ не найдена функция main().")
 
 def run_summator() -> None:
     mod = importlib.import_module("summator")
@@ -70,10 +70,10 @@ def main() -> None:
     actions: Dict[str, Callable[[], None]] = {
         "0": exit_program,
         "1": run_traceid_processor,
-        "2": run_csv_processor,
+        "2": run_exel_processor,
         "3": run_sql_generator,
-        "4": run_csv_processor_EQ,  # новый шаг 4
-        "5": run_summator,          # summator перенесён на шаг 5
+        "4": run_exel_processor_EQ,  # новый шаг 4
+        "5": run_summator,           # summator перенесён на шаг 5
     }
     while True:
         choice = read_choice()
